@@ -1,21 +1,21 @@
-import { Tabs, Divider, Button } from 'antd';
-import { useRef, useState } from 'react';
-import {PlusOutlined} from '@ant-design/icons'
+import { Tabs, Divider, Button } from "antd";
+import { useRef, useState } from "react";
+import { PlusOutlined } from "@ant-design/icons";
 const initialItems = [
   {
-    label: 'Tab 1',
-    children: 'Content of Tab 1',
-    key: '1',
+    label: "Tab 1",
+    children: "Content of Tab 1",
+    key: "1",
   },
   {
-    label: 'Tab 2',
-    children: 'Content of Tab 2',
-    key: '2',
+    label: "Tab 2",
+    children: "Content of Tab 2",
+    key: "2",
   },
   {
-    label: 'Tab 3',
-    children: 'Content of Tab 3',
-    key: '3',
+    label: "Tab 3",
+    children: "Content of Tab 3",
+    key: "3",
     closable: false,
   },
 ];
@@ -30,8 +30,8 @@ const MenuHeader = () => {
     const newActiveKey = `newTab${newTabIndex.current++}`;
     const newPanes = [...items];
     newPanes.push({
-      label: 'New Tab',
-      children: 'Content of new Tab',
+      label: "New Tab",
+      children: "Content of new Tab",
       key: newActiveKey,
     });
     setItems(newPanes);
@@ -57,7 +57,7 @@ const MenuHeader = () => {
     setActiveKey(newActiveKey);
   };
   const onEdit = (targetKey, action) => {
-    if (action === 'add') {
+    if (action === "add") {
       add();
     } else {
       remove(targetKey);
@@ -72,14 +72,18 @@ const MenuHeader = () => {
         onEdit={onEdit}
         items={items}
       />
-      <div className='buttons'>
-        <div className='buttonsLeft'>
-          <Button shape="round" icon={<PlusOutlined />} size='large'/>
-          <Button type="primary" shape="round" size='large'>搜索</Button>
-          <Button shape="round" size='large'>重置</Button>
+      <div className="buttons">
+        <div className="buttonsLeft">
+          <Button shape="round" icon={<PlusOutlined />} size="large" />
+          <Button type="primary" shape="round" size="large">
+            搜索
+          </Button>
+          <Button shape="round" size="large">
+            重置
+          </Button>
         </div>
-        <Divider/>
-        <div class='buttonsRight'>
+        <Divider />
+        <div class="buttonsRight">
           <Button type="primary">新增</Button>
           <Button type="primary">批量导入</Button>
           <Button type="primary">批量删除</Button>
@@ -87,7 +91,6 @@ const MenuHeader = () => {
         </div>
       </div>
     </div>
-    
   );
 };
 export default MenuHeader;

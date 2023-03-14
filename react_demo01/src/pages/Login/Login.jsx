@@ -1,21 +1,21 @@
-import { Button, Checkbox, Form, Input } from 'antd';
-import './Login.scss'
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Button, Checkbox, Form, Input } from "antd";
+import "./Login.scss";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
-  let navigate = useNavigate()
+  let navigate = useNavigate();
   const onFinish = (values) => {
-    console.log('Success:', values);
+    console.log("Success:", values);
   };
   const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
+    console.log("Failed:", errorInfo);
   };
-  const onLogin = ()=>{
-    navigate('/menu')
-  }
+  const onLogin = () => {
+    navigate("/menu");
+  };
   return (
-    <div className="formContainer"> 
+    <div className="formContainer">
       <Form
         name="basic"
         labelCol={{
@@ -34,54 +34,54 @@ export default function Login() {
         onFinishFailed={onFinishFailed}
         autoComplete="off"
       >
-    <Form.Item
-      label="Username"
-      name="username"
-      rules={[
-        {
-          required: true,
-          message: 'Please input your username!',
-        },
-      ]}
-    >
-      <Input />
-    </Form.Item>
+        <Form.Item
+          label="Username"
+          name="username"
+          rules={[
+            {
+              required: true,
+              message: "Please input your username!",
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
 
-    <Form.Item
-      label="Password"
-      name="password"
-      rules={[
-        {
-          required: true,
-          message: 'Please input your password!',
-        },
-      ]}
-    >
-      <Input.Password />
-    </Form.Item>
+        <Form.Item
+          label="Password"
+          name="password"
+          rules={[
+            {
+              required: true,
+              message: "Please input your password!",
+            },
+          ]}
+        >
+          <Input.Password />
+        </Form.Item>
 
-    <Form.Item
-      name="remember"
-      valuePropName="checked"
-      wrapperCol={{
-        offset: 8,
-        span: 16,
-      }}
-    >
-      <Checkbox>Remember me</Checkbox>
-    </Form.Item>
+        <Form.Item
+          name="remember"
+          valuePropName="checked"
+          wrapperCol={{
+            offset: 8,
+            span: 16,
+          }}
+        >
+          <Checkbox>Remember me</Checkbox>
+        </Form.Item>
 
-    <Form.Item
-      wrapperCol={{
-        offset: 8,
-        span: 16,
-      }}
-    >
-      <Button type="primary" htmlType="submit" onClick={onLogin}>
-        Submit
-      </Button>
-    </Form.Item>
-  </Form>
-</div>
-  )
+        <Form.Item
+          wrapperCol={{
+            offset: 8,
+            span: 16,
+          }}
+        >
+          <Button type="primary" htmlType="submit" onClick={onLogin}>
+            Submit
+          </Button>
+        </Form.Item>
+      </Form>
+    </div>
+  );
 }
