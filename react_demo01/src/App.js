@@ -10,7 +10,10 @@ function App() {
       <Routes>
         <Route path="/">
           <Route path="menu" element={<MenuIndex />}>
-            <Route path="first" element={<MenuContent />} />
+            <Route path="first/:" element={<MenuContent />} />
+            <Route path="second" element={<MenuContent />} />
+            <Route path="third" element={<MenuContent />} />
+            <Route path="fouth" element={<MenuContent />} />
             <Route path="/menu" element={<Navigate to="/menu/first" />} />
           </Route>
           <Route path="login" element={<Login />} />
