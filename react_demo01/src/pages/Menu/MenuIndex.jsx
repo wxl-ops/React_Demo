@@ -61,6 +61,8 @@ const items2 = [UserOutlined, LaptopOutlined, NotificationOutlined].map(
     };
   }
 );
+// const PARAMS = "params";
+const SEARCH = "search";
 export default function MenuIndex(props) {
   const [collapsed, setCollapsed] = useState(false);
   const {
@@ -68,7 +70,8 @@ export default function MenuIndex(props) {
   } = theme.useToken();
   const navigate = useNavigate();
   const handleClick = (e) => {
-    navigate(e.key);
+    navigate(e.key + `?search=${SEARCH}`);
+    // navigate(e.key + "/" + PARAMS);
   };
   return (
     <Layout>
