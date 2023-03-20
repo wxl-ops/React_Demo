@@ -1,7 +1,7 @@
 // import React, { useRef, useState } from "react";
 import React, { useRef } from "react";
 import { connect } from "react-redux";
-import { applyPersonAction } from "../../redux/actions/person";
+import { applyPerson } from "../../redux/actions/person";
 import { nanoid } from "nanoid";
 function Person(props) {
   // const [personArr, setPersonArr] = useState([]);
@@ -48,8 +48,8 @@ function Person(props) {
 }
 
 export default connect(
-  (state) => ({ personObj: state.personReducer, count: state.countReducer }),
+  (state) => ({ personObj: state.person, count: state.count }),
   {
-    applyPerson: applyPersonAction,
+    applyPerson,
   }
 )(Person);

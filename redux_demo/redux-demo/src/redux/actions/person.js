@@ -1,4 +1,4 @@
 import { APPLYPERSON } from "../constant";
-export const applyPersonAction = (personObj) => {
+export const applyPerson = (personObj) => {
   return { type: APPLYPERSON, personObj };
 };

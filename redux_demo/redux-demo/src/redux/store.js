@@ -1,6 +1,4 @@
-import { createStore, applyMiddleware, combineReducers } from "redux";
-import countReducer from "./reducers/count";
-import personReducer from "./reducers/person";
+import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-const allReducers = combineReducers({ countReducer, personReducer });
-export default createStore(allReducers, applyMiddleware(thunk));
+import reducers from "./reducers";
+export default createStore(reducers, applyMiddleware(thunk));

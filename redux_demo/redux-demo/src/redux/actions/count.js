@@ -1,16 +1,16 @@
 import { INCREMENT, DECREMENT } from "../constant";
 import store from "../store";
-export const incrementAction = (value) => {
+export const increment = (value) => {
   return { type: INCREMENT, value };
 };
-export const decrementAction = (value) => {
+export const decrement = (value) => {
   return { type: DECREMENT, value };
 };
-export const asyncIncrementAction = (value, time) => {
+export const asyncIncrement = (value, time) => {
   return () => {
     setTimeout(() => {
       console.log(123);
-      store.dispatch(incrementAction(value));
+      store.dispatch(increment(value));
     }, time);
   };
 };

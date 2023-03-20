@@ -1,7 +1,7 @@
 import {
-  incrementAction,
-  decrementAction,
-  asyncIncrementAction,
+  increment,
+  decrement,
+  asyncIncrement,
 } from "../../redux/actions/count";
 import { connect } from "react-redux";
 import React, { useRef } from "react";
@@ -57,12 +57,12 @@ function Count(props) {
 // }
 export default connect(
   (state) => ({
-    count: state.countReducer,
-    personNum: state.personReducer.length,
+    count: state.count,
+    personNum: state.person.length,
   }),
   {
-    increment: incrementAction,
-    decrement: decrementAction,
-    asyncIncrement: asyncIncrementAction,
+    increment,
+    decrement,
+    asyncIncrement,
   }
 )(Count);
