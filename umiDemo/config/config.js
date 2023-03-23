@@ -1,7 +1,7 @@
 import { defineConfig } from 'umi';
 import routes from './routes.ts';
 import theme from './theme.js';
-import proxy from './proxy.js';
+import proxy from './proxy.ts';
 export default defineConfig({
   proxy, //引入反向代理
   nodeModulesTransform: {

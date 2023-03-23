@@ -16,8 +16,8 @@ export default defineConfig({
   proxy: {
     '/public': {
       // target: process.env.SOCKET_SERVER,
-      // target: 'http://192.168.2.200:10000/assets/',
-      target: 'http://192.168.2.130:10002',
+      target: 'http://192.168.2.200:10000/assets/',
+      // target: 'http://192.168.2.130:10002',
       // target: 'http://192.168.2.121:10002',
       secure: false,
       changeOrigin: true,

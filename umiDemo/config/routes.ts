@@ -6,12 +6,13 @@ export default [
     component: '@/layouts/BaseLayout',
 
     routes: [
+      { path: '/', redirect: '/content' },
       {
         path: '/content',
         component: '@/pages/Content',
         wrappers: ['@/wrappers/auth'],
       },
-      { path: '/contentTwo', component: '@/pages/ContentTwo' },
+      { path: '/contentTwo/:id', component: '@/pages/ContentTwo' },
       { path: '/contentThird', component: '@/pages/ContentThird' },
       // { component: '@/pages/404' },
     ],
